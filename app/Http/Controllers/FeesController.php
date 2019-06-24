@@ -44,9 +44,10 @@ class FeesController extends Controller
         ]);
 
         $fee = new Fee;
+        $student = Fee::where('student_id','$fee->student->id')->get();
         $fee->student_id = $request->Sid;
         $fee->amount_paid = $request->amount;
-        $fee->balance = 100000 - $request->amount;
+        $fee->balance = $student->balance - $request->amount;
         $fee->save();
 
         return redirect()->route('fees');

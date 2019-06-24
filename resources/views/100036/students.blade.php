@@ -17,7 +17,7 @@
 </head>
 <body style="background-color:ghostwhite">
     <div style="margin-top:5% !important">
-        <a href="{{route('home')}}"><i style="position:absolute; margin-left:29%; margin-top:-3%;" class="fas fa-home"></i></a>
+        <a href="{{route('index')}}"><i style="position:absolute; margin-left:29%; margin-top:-3%;" class="fas fa-home"></i></a>
         <a href="{{route('fees')}}"><i title="Student Fees" style="position:absolute; margin-left:32%; margin-top:-3%;" class="fas fa-money-check-alt"></i></a>
     </div>
     @if ($errors->any())
