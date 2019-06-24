@@ -40,7 +40,7 @@ class FeesController extends Controller
     {
         $request->validate([
             'Sid' => 'required',
-            'amount' => 'required'
+            'amount' => 'required | integer'
         ]);
 
         $fee = new Fee;

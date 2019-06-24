@@ -19,6 +19,15 @@
         <a href="{{route('home')}}"><i style="position:absolute; margin-left:29%; margin-top:-3%;" class="fas fa-home"></i></a>
         <a href="{{route('students')}}"><i title="Student Details" style="position:absolute; margin-left:32%; margin-top:-3%;" class="fas fa-user-graduate"></i></a>
     </div>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="container">
         <div class="row">
             <div class="col-3">
