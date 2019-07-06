@@ -44,10 +44,18 @@ class FeesController extends Controller
         ]);
 
         $fee = new Fee;
-        $fee->student_id = $request->Sid;
-        $fee->amount_paid = $request->amount;
-        $fee->balance = 100000 - $request->amount;
-        $fee->save();
+        if (count($fee)>0) {
+            $balance = $fee->balance - $request->amount;
+            $fee->update(['balance' => $balance]);
+        }
+        else {
+            
+            $fee->student_id = $request->Sid;
+            $fee->amount_paid = $request->amount;
+            $fee->balance = 100000 - $request->amount;
+            $fee->save();
+        }
+        
 
         return redirect()->route('fees');
     }
